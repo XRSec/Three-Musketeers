@@ -62,16 +62,16 @@ jobs:
           #   --mac-package-name "CobaltStrike" \
           #   --icon cobaltstrike.icns \
           #   --java-options "-Dfile.encoding=utf-8 -XX:ParallelGCThreads=4  -XX:+AggressiveHeap -XX:+UseParallelGC -javaagent:\$APPDIR/hook.jar -javaagent:\$APPDIR/cobaltstrikecn.jar"
-      -
-        name: Generate DMG
+          zip -r Godzilla.zip Godzilla.app
+          mv Godzilla.zip Behinder*.dmg App
+#       -
+#         name: Generate DMG
 #         uses: actions/setup-node@v2
 #         with:
 #           node-version: '16'
-      - run: |
-          # npm install --global create-dmg
-          # create-dmg Godzilla.app
-          zip -r Godzilla.zip Godzilla.app
-          mv Godzilla.zip Behinder*.dmg App
+#       - run: |
+#           npm install --global create-dmg
+#           create-dmg Godzilla.app
       - 
         name: release
         uses: softprops/action-gh-release@v1
