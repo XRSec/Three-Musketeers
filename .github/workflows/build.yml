@@ -1,7 +1,8 @@
 name: Mac_Build
   
 on:
-  push
+  watch:
+    types: started
 
 jobs:
   Mac_Build:
