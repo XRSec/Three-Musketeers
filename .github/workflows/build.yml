@@ -21,10 +21,10 @@ jobs:
           wget -O Behinder.zip `curl -u ${{ secrets.DOCKERHUB_USERNAME }}:${{ secrets.TOKEN_GITHUB }} -s https://api.github.com/repos/rebeyond/Behinder/releases/latest | grep "browser_download_url" | cut -d '"' -f 4`
           # openjfx
           wget -O openjfx-16.zip https://download2.gluonhq.com/openjfx/16/openjfx-16_osx-x64_bin-sdk.zip
-          unzip Behinder.zip
+          ditto -V -x -k   --sequesterRsrc --rsrc Behinder.zip /tmp/Behinder
           unzip openjfx-16.zip
           mkdir Behinder App
-          mv Behinder.jar javafx-sdk-16/lib Behinder  
+          mv /tmp/Behinder/Behinder.jar /tmp/Behinder/server /tmp/Behinder/data.db javafx-sdk-16/lib Behinder  
       - 
         name: Private Actions Checkout
         uses: actions/checkout@v2.3.4
