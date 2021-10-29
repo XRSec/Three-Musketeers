@@ -1,13 +1,11 @@
 name: Mac_Build
   
 on:
-  watch:
-    types: started
+  workflow_dispatch:
 
 jobs:
   Mac_Build:
     name: Mac_Build
-    if: github.event.repository.owner.id == github.event.sender.id
     runs-on: macos-latest
     steps:
       - 
