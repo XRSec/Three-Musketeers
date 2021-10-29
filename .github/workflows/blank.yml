@@ -24,7 +24,7 @@ jobs:
     steps:
       - name: Get yarn cache directory path
         id: yarn-cache-dir-path
-        run: echo "::set-output name=dir::$(yarn cache dir)"
+        run: echo "::set-output name=dir::$(date +%Y_%m_%d)"
 
       - name: Use yarn cache
         run: echo ${{ steps.yarn-cache-dir-path.outputs.dir }}
