@@ -22,11 +22,9 @@ jobs:
 
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
-      - name: Run a one-line script
-        id: get_version
-        run: echo Hello, world!
+      - name: Get yarn cache directory path
+        id: yarn-cache-dir-path
+        run: echo "::set-output name=dir::$(yarn cache dir)"
 
-      # Runs a set of commands using the runners shell
-      - name: Run a multi-line script
-        run: |
-          echo ${{steps.id.outputs}}
+      - name: Use yarn cache
+        run: echo ${{ steps.yarn-cache-dir-path.outputs.dir }}
