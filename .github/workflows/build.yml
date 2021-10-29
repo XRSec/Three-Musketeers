@@ -8,6 +8,12 @@ jobs:
     name: Mac_Build
     runs-on: macos-latest
     steps:
+      - 
+        name: Private Actions Checkout
+        uses: actions/checkout@v2.3.4
+        with:
+          persist-credentials: false
+          fetch-depth: 0
       -
         name: IniT Path
         run: |
@@ -25,12 +31,6 @@ jobs:
           unzip openjfx-16.zip
           mkdir Behinder App
           mv /tmp/Behinder/Behinder.jar /tmp/Behinder/server /tmp/Behinder/data.db javafx-sdk-16/lib Behinder  
-      - 
-        name: Private Actions Checkout
-        uses: actions/checkout@v2.3.4
-        with:
-          persist-credentials: false
-          fetch-depth: 0
       - 
         name: Generate APP
         uses: actions/setup-java@v2
