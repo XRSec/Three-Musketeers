@@ -1,0 +1,31 @@
+{
+    "platform": "mac",
+    "jdk": "jdk-17_macos-x64_bin.tar.gz",
+    "executable": "Behinder",
+    "mainclass": "net.rebeyond.behinder.ui.Launcher",
+    "classpath": [
+        "Behinder.jar",
+        "javafx-sdk-16/lib"
+    ],
+    "vmargs": [
+        "Dfile.encoding=utf-8", 
+        "ParallelGCThreads=4 ", 
+        "AggressiveHeap", 
+        "+UseParallelGC", 
+        "Xms512M",
+        "Xmx1024M",
+        "--module-path lib",
+        "--add-modules=javafx.controls",
+        "--add-modules=javafx.fxml",
+        "--add-modules=javafx.base",
+        "--add-modules=javafx.graphics",
+        "--add-modules=javafx.web -jar"
+    ],
+    "useZgcIfSupportedOs": true,
+    "output": "Behinder.app",
+    "resources": [
+        "server",
+        "data.db"
+    ],
+    "icon": "Behinder.icns"
+}

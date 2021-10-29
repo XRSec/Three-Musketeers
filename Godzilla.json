@@ -1,0 +1,19 @@
+{
+    "platform": "mac",
+    "jdk": "jdk-17_macos-x64_bin.tar.gz",
+    "executable": "Godzilla",
+    "mainclass": "core.ui.MainActivity",
+    "classpath": [
+        "Godzilla.jar"
+    ],
+    "vmargs": [
+        "Dfile.encoding=utf-8", 
+        "ParallelGCThreads=4 ", 
+        "AggressiveHeap", 
+        "+UseParallelGC", 
+        "Xms512M",
+        "Xmx1024M"
+    ],
+    "output": "Godzilla.app",
+    "icon": "Godzilla.icns"
+}
