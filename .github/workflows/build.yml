@@ -1,11 +1,11 @@
-name: Docker Oracle Java Build
+name: Mac_Build
   
 on:
   push
 
 jobs:
   Mac_Build:
-    name: Docker Oracle Java Build Java8
+    name: Mac_Build
     runs-on: macos-latest
     steps:
       -
