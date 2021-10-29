@@ -37,7 +37,7 @@ jobs:
         with:
           distribution: 'temurin'
           java-version: '17'
-        run: |
+      - run: |
           # Godzilla
           java -jar packr.jar Godzilla.json
           # Behinder
@@ -67,7 +67,7 @@ jobs:
         with:
           node-version: '14'
           cache: 'npm'
-        run: |
+      - run: |
           npm install --global create-dmg
           create-dmg Godzilla.app
           mv Godzilla.dmg Behinder*.dmg App
