@@ -18,7 +18,7 @@ jobs:
         name: IniT Path
         run: |
           # jdk17
-          # wget https://download.oracle.com/java/17/latest/jdk-17_macos-x64_bin.tar.gz
+          wget https://download.oracle.com/java/17/latest/jdk-17_macos-x64_bin.tar.gz
           # packr
           wget -O packr.jar `curl -u ${{ secrets.DOCKERHUB_USERNAME }}:${{ secrets.TOKEN_GITHUB }} -s https://api.github.com/repos/libgdx/packr/releases/latest | grep "browser_download_url" | cut -d '"' -f 4`
           # Godzilla
