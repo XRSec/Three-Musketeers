@@ -1,5 +1,6 @@
-# Shell 三剑客
+# 三剑客
 
+> [releases](https://github.com/XRSec/Three-Musketeers/releases) 那啥菜刀蚁剑都有客户端，so
 ## [Behinder](https://github.com/rebeyond/Behinder)
 
 > Behinder需要 `openjfx` 支持，但是使用 `jpackage` 打包进去，并不会在运行的时候调用，所以先打包进目录，然后运行的时候调用
