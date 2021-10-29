@@ -69,6 +69,7 @@ jobs:
           node-version: '16'
       - run: |
           npm install --global create-dmg
+          ls
           create-dmg Godzilla.app
           mv Godzilla.dmg Behinder*.dmg App
       - 
