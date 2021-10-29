@@ -32,12 +32,13 @@ jobs:
           mkdir Behinder App
           mv /tmp/Behinder/Behinder.jar /tmp/Behinder/server /tmp/Behinder/data.db javafx-sdk-16/lib Behinder  
       - 
-        name: Generate APP
         uses: actions/setup-java@v2
         with:
           distribution: 'temurin'
           java-version: '17'
-      - run: |
+      - 
+        name: Generate APP
+        run: |
           # Godzilla
           java -jar packr.jar Godzilla.json
           # Behinder
@@ -65,8 +66,7 @@ jobs:
         name: Generate DMG
         uses: actions/setup-node@v2
         with:
-          node-version: '14'
-          cache: 'npm'
+          node-version: '16'
       - run: |
           npm install --global create-dmg
           create-dmg Godzilla.app
