@@ -17,7 +17,29 @@ jpackage --name Behinder --input ./Behinder \
             --icon Behinder.icns \
             --java-options "-Dfile.encoding=utf-8 -XX:ParallelGCThreads=4  -XX:+AggressiveHeap -XX:+UseParallelGC --module-path \$APPDIR/lib --add-modules=javafx.controls --add-modules=javafx.fxml --add-modules=javafx.base --add-modules=javafx.graphics --add-modules=javafx.web"
 ```
+### M1
+```bash
+cd ~/Downloads
+mkdir Behinder && cd Behinder       
+wget https://github.com/rebeyond/Behinder/releases/download/Behinder_v3.0_Beta_11/Behinder_v3.0_Beta_11.t00ls.zip
+wget https://download2.gluonhq.com/openjfx/16/openjfx-16_osx-x64_bin-sdk.zip
+wget https://raw.githubusercontent.com/XRSec/Three-Musketeers/main/Behinder.icns
 
+unziup openjfx-16_osx-x64_bin-sdk.zip
+ditto -V -x -k   --sequesterRsrc --rsrc Behinder_v3.0_Beta_11.t00ls.zip Behinder
+mv javafx-sdk-16/lib Behinder
+
+jpackage --name Behinder --input Behinder \
+            --main-jar Behinder.jar \
+            --type dmg  \
+            --copyright "Behinder_v3.0 Beta 11【t00ls专版】.XRSec"  \
+            --app-version "3.0" \
+            --description "Behinder_v3.0 Beta 11【t00ls专版】" \
+            --vendor "rebeyond" \
+            --mac-package-name "Behinder" \
+            --icon Behinder.icns \
+            --java-options "-Dfile.encoding=utf-8 -XX:ParallelGCThreads=4  -XX:+AggressiveHeap -XX:+UseParallelGC --module-path \$APPDIR/lib --add-modules=javafx.controls --add-modules=javafx.fxml --add-modules=javafx.base --add-modules=javafx.graphics --add-modules=javafx.web"
+```
 ## [Godzilla](https://github.com/BeichenDream/Godzilla)
 
 > Godzilla 暂时不能使用 `jpackage` 进行打包，只能使用 `packr`
@@ -47,6 +69,9 @@ java -jar packr.jar Godzilla.json
     "icon": "Godzilla.icns"
 }
 ```
+
+### M1 
+> 没有设备，暂不速配，可参考上面的测试
 
 ## CobaltStrike
 
@@ -92,5 +117,8 @@ jpackage --name CobaltStrike --input ./CobaltStrike \
   --icon cobaltstrike.icns \
   --java-options "-Dfile.encoding=utf-8 -XX:ParallelGCThreads=4  -XX:+AggressiveHeap -XX:+UseParallelGC -javaagent:\$APPDIR/hook.jar -javaagent:\$APPDIR/cobaltstrikecn.jar"
 ```
+
+### M1 
+> 没有设备，暂不速配，可参考上面的测试
 
 > XRSec has the right to modify and interpret this article. If you want to reprint or disseminate this article, you must ensure the integrity of this article, including all contents such as copyright notice. Without the permission of the author, the content of this article shall not be modified or increased or decreased arbitrarily, and it shall not be used for commercial purposes in any way
