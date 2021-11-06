@@ -22,7 +22,7 @@ jobs:
           # packr
           wget -O packr.jar `curl -u ${{ secrets.DOCKERHUB_USERNAME }}:${{ secrets.TOKEN_GITHUB }} -s https://api.github.com/repos/libgdx/packr/releases/latest | grep "browser_download_url" | cut -d '"' -f 4`
           # Godzilla
-          wget `curl -u ${{ secrets.DOCKERHUB_USERNAME }}:${{ secrets.TOKEN_GITHUB }} -s https://api.github.com/repos/BeichenDream/Godzilla/releases/latest | grep "browser_download_url" | cut -d '"' -f 4`
+          wget -O Godzilla.jar `curl -u ${{ secrets.DOCKERHUB_USERNAME }}:${{ secrets.TOKEN_GITHUB }} -s https://api.github.com/repos/BeichenDream/Godzilla/releases/latest | grep "browser_download_url" | cut -d '"' -f 4`
           # Behinder
           wget -O Behinder.zip `curl -u ${{ secrets.DOCKERHUB_USERNAME }}:${{ secrets.TOKEN_GITHUB }} -s https://api.github.com/repos/rebeyond/Behinder/releases/latest | grep "browser_download_url" | cut -d '"' -f 4`
           # openjfx
